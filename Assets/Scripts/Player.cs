@@ -21,13 +21,9 @@ public class Player : MonoBehaviour
         {
             transform.position = transform.position + new Vector3(0.0f, -5.0f * Time.deltaTime, 0.0f);
         }
-         if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.Space))
         {
-            transform.position = transform.position + new Vector3(5.0f, 0.0f * Time.deltaTime, 0.0f);
-        }
-          if (Input.GetKey(KeyCode.D))
-        {
-            transform.position = transform.position + new Vector3(-5.0f, 5.0f * Time.deltaTime, 0.0f);
+            Instantiate();
         }
 
     }
