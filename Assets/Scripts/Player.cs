@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+ 
+    public float speed ;
+
+    public GameObject meteoro;
+
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,16 +23,27 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.W))
         {
-            transform.position = transform.position + new Vector3(0.0f, 5.0f * Time.deltaTime, 0.0f);
+            transform.position = transform.position + new Vector3(0.0f, speed * Time.deltaTime, 0.0f);
         }
           if (Input.GetKey(KeyCode.S))
         {
-            transform.position = transform.position + new Vector3(0.0f, -5.0f * Time.deltaTime, 0.0f);
+            transform.position = transform.position + new Vector3(0.0f, -speed * Time.deltaTime, 0.0f);
         }
+         if (Input.GetKey(KeyCode.A))
+        {
+            transform.position = transform.position + new Vector3(speed, 0.0f * Time.deltaTime, 0.0f);
+        }
+          if (Input.GetKey(KeyCode.D))
+        {
+            transform.position = transform.position + new Vector3(-speed, 0.0f * Time.deltaTime, 0.0f);
+        }
+
+
         if (Input.GetKey(KeyCode.Space))
         {
-            Instantiate();
+          Instantiate(meteoro,new Vector3(3.0f,3.0f,0.0f),Quaternion.identity);
         }
+        
 
     }
 }
