@@ -24,11 +24,11 @@ public class Player : MonoBehaviour
         }
          if (Input.GetKey(KeyCode.D))
         {
-            transform.position = transform.position + new Vector3(speedHorizontal, 0.0f * Time.deltaTime, 0.0f);
+            transform.position = transform.position + new Vector3(speedHorizontal * Time.deltaTime , 0.0f , 0.0f);
         }
           if (Input.GetKey(KeyCode.A))
         {
-            transform.position = transform.position + new Vector3(-speedHorizontal, 0.0f * Time.deltaTime, 0.0f);
+            transform.position = transform.position + new Vector3(-speedHorizontal * Time.deltaTime, 0.0f ,0.0f);
         }
     }
     public void FixedUpdate()
