@@ -9,8 +9,27 @@ public class Player : MonoBehaviour
 
     public float speedHorizontal;
 
+    public Rigidbody2D jogadorRb;
+
+     public Rigidbody2D projetoRb;
 
     public GameObject meteoro;
+
+    public float velocidadeProjetil = 3.0f;
+
+    void start()
+    {
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            Rigidbody2D projetil = Instantiate(projetoRb,jogadorRb.position, Quaternion.identity);
+            projetil.velocity = transform.up * velocidadeProjetil;
+
+
+        }
+
+
+    }
+
 
     void Update()
     {
