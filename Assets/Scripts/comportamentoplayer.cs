@@ -1,4 +1,4 @@
-using System.Collections;
+    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -41,5 +41,10 @@ public class comportamentoplayer : MonoBehaviour
             player.velocity = Vector2.ClampMagnitude(player.velocity, velocidademaxima);
         }
 
+    }
+    void OnTriggerEnter2D (Collider2D outro)
+    {
+
+        Destroy (gameObject);
     }
 }
